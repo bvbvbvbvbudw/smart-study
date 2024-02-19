@@ -1,0 +1,35 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+/* aside styles */
+.main__wrapper{
+    display: flex;
+    height: 100%;
+}
+aside {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    width: 200px;
+    height: 100%;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+aside a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+aside a:hover {
+    background-color: #555;
+}
+/* end aside styles */
