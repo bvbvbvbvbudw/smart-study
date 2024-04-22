@@ -1,0 +1,151 @@
+{% extends 'layouts/front/main.html' %}
+{% block title %} Task Page {% endblock %}
+
+{% block content %}
+
+<div class="topic" id="task">
+    <div class="frame-22">
+      <div class="text-field">
+        <div class="text-field2">
+          <div class="state-layer">
+            <div class="content_task">
+              <div class="input-text">
+                <div class="input-text2">08/17/2023</div>
+              </div>
+              <div class="label-text">
+                <div class="label-text2">{{task.date}}</div>
+              </div>
+            </div>
+            <div class="trailing-icon">
+              <div class="container">
+                <div class="state-layer2">
+                  <img class="icons-today-24-px" src="icons-today-24-px0.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="supporting-text">
+          <div class="supporting-text2">MM/DD/YYYY</div>
+        </div>
+      </div>
+      <div class="frame-12">
+        <div class="subject">{{task.subject}}</div>
+      </div>
+      <!-- <div class="frame-5">
+        <div class="horizontal-card">
+          <div class="content2">
+            <div class="header">
+              <div class="content3">
+                <div class="monogram">
+                  <div class="background"></div>
+                  <div class="initial">A</div>
+                </div>
+                <div class="text">
+                  <div class="header2">Subject</div>
+                  <div class="subhead">task</div>
+                </div>
+              </div>
+              <div class="media">
+                <img class="media2" src="media1.png" />
+              </div>
+            </div>
+          </div>
+          <div class="background2">
+            <div class="state-layer3"></div>
+          </div>
+        </div>
+        <div class="horizontal-card">
+          <div class="content2">
+            <div class="header">
+              <div class="content3">
+                <div class="monogram">
+                  <div class="background"></div>
+                  <div class="initial">A</div>
+                </div>
+                <div class="text">
+                  <div class="header2">Subject</div>
+                  <div class="subhead">task</div>
+                </div>
+              </div>
+              <div class="media">
+                <img class="media2" src="media3.png" />
+              </div>
+            </div>
+          </div>
+          <div class="background2">
+            <div class="state-layer3"></div>
+          </div>
+        </div>
+        <div class="frame-23">
+          <div class="horizontal-card">
+            <div class="content2">
+              <div class="header">
+                <div class="content3">
+                  <div class="monogram">
+                    <div class="background"></div>
+                    <div class="initial">A</div>
+                  </div>
+                  <div class="text">
+                    <div class="header2">Subject</div>
+                    <div class="subhead">task</div>
+                  </div>
+                </div>
+                <div class="media">
+                  <img class="media2" src="media5.png" />
+                </div>
+              </div>
+            </div>
+            <div class="background2">
+              <div class="state-layer3"></div>
+            </div>
+          </div>
+          <img
+            class="icon-keyboard-arrow-down"
+            src="icon-keyboard-arrow-down0.svg"
+          />
+        </div>
+        <div class="frame-13"></div>
+      </div> -->
+      <div class="topic2">{{task.topic}}</div>
+      <div
+        class="embark-on-a-journey-into-the-fascinating-world-of-artificial-intelligence-ai-with-our-comprehensive-introductory-course-designed-to-provide-students-with-a-solid-foundation-in-ai-concepts-and-techniques-this-course-explores-the-fundamental-principles-underlying-intelligent-systems-and-their-applications-in-various-domains-throughout-the-semester-students-will-delve-into-key-topics-such-as-machine-learning-neural-networks-natural-language-processing-and-computer-vision-through-a-combination-of-lectures-hands-on-projects-and-interactive-discussions-participants-will-gain-practical-experience-implementing-ai-algorithms-and-techniques-using-industry-standard-tools-and-libraries-the-course-begins-by-examining-the-history-and-evolution-of-ai-from-its-inception-to-modern-day-advancements-providing-insights-into-the-ethical-and-societal-implications-of-ai-technologies-students-will-learn-about-different-approaches-to-ai-including-symbolic-ai-connectionist-ai-and-evolutionary-computation-and-gain-an-understanding-of-the-strengths-and-limitations-of-each-approach-as-the-course-progresses-students-will-explore-core-machine-learning-concepts-including-supervised-and-unsupervised-learning-reinforcement-learning-and-deep-learning-they-will-develop-the-skills-to-design-and-train-machine-learning-models-to-solve-real-world-problems-with-a-focus-on-practical-applications-such-as-image-classification-speech-recognition-and-autonomous-agents-in-addition-to-technical-skills-this-course-emphasizes-critical-thinking-and-problem-solving-challenging-students-to-analyze-complex-ai-systems-and-evaluate-their-performance-and-ethical-implications-through-case-studies-and-discussions-students-will-examine-the-societal-impact-of-ai-on-areas-such-as-healthcare-finance-transportation-and-ethics-by-the-end-of-the-course-students-will-emerge-with-a-deep-understanding-of-the-principles-and-practices-of-artificial-intelligence-equipped-with-the-knowledge-and-skills-to-pursue-further-studies-or-careers-in-this-rapidly-evolving-field"
+      >
+        {{task.description}}
+      </div>
+      <div class="frame-14">
+        <img class="image-1" src="image-10.png" />
+        <div class="text-field3">
+          <div class="text-field4">
+            <div class="state-layer">
+              <div class="content_task">
+                <div class="label-text3">
+                  <div class="label-text4">attachment</div>
+                </div>
+                <div class="input-text">
+                  <div class="input-text2">select file</div>
+                </div>
+              </div>
+              <div class="trailing-icon">
+                <div class="container">
+                  <div class="state-layer4">
+                    <img class="icon" src="icon0.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="active-indicator"></div>
+        </div>
+        <div class="button">
+          <div class="state-layer5">
+            <div class="label-text5">Submit/Edit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  
+{% endblock %}
