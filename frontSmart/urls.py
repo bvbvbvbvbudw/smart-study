@@ -3,11 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # path('', views.index, name='index'),
-    path('', views.Tasks, name='index'),
+    path('', views.tasks, name='index'),
 ]
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
-

@@ -13,6 +13,22 @@
 <div class="main__wrapper">
     {% include 'front/components/menu/aside.html' %}
     <div class="content">
+        <div class="header-container">
+            <a class="header-logo" href="/tasks">Smart Study</a>
+            <div class="header-searchfield">
+                <img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png"/>
+                <a>Search</a>
+            </div>
+    
+            <div class="header-user">            
+                <a>Name Surname</a>
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-profile-1481935-1254808.png"/>
+            </div>
+    
+            <div class="header-burger-menu">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"/>
+            </div>
+        </div>
         {% block content %}
     
         {% endblock %}

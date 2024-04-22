@@ -2,60 +2,44 @@
 {% block title %} Main Page {% endblock %}
 
 {% block content %}
-  
-    <div class="header_container">
-        <a class="header_logo">Smart Study</a>
-        <div class="header_searchfield">
-            <img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png"/>
-            <a>Search</a>
-        </div>
-
-        <div class="header_user">            
-            <a>Name Surname</a>
-            <img src="https://cdn.iconscout.com/icon/free/png-256/free-profile-1481935-1254808.png"/>
-        </div>
-
-        <div class="header_burger_menu">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"/>
-        </div>
-    </div>
-
-    <div class="main_section">
-        <div class="main_container">
+    <div class="main-section">
+        <div class="main-container">
 
             {% if taskList %}  
             {% for task in taskList %}
-            <div class="main_container_item">
-                <div class="main_container_item_header">
-                    <div class="main_container_item_header_left">
+            <div class="main-container-item">
+                <div class="main-container-item-header">
+                    <div class="main-container-item-header-left">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"/>
                     </div>
-                    <div class="main_container_item_header_center">
-                        <h2>{{task.subject}}</h2>
+                    <div class="main-container-item-header-center">
+                        <h2>
+                            <a href="/tasks/{{task.id}}">{{task.subject}}</a>
+                        </h2>
                         <a>Complete by: {{task.date}}</a>
                     </div>
-                    <div class="main_container_item_header_right">
+                    <div class="main-container-item-header-right">
                         <img src="https://cdn3.iconfinder.com/data/icons/slicons-line-essentials/24/more_vertical-512.png"/>
                     </div>
                 </div>
-                <div class="main_container_item_main">
-                    <div class="main_container_item_main_image">
+                <div class="main-container-item-main">
+                    <div class="main-container-item-main-image">
                         <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"/>
                     </div>
                     
-                    <div class="main_container_item_main_title">
+                    <div class="main-container-item-main-title">
                         <h3>{{task.task}}</h3>
                         <a>{{task.topic}}</a>
                     </div>
                     
-                    <div class="main_container_item_main_description">
+                    <div class="main-container-item-main-description">
                         <a>{{task.description}}</a>
                     </div>
 
-                    <div class="main_container_item_main_buttons">
+                    <!-- <div class="main_container_item_main_buttons">
                         <a>Disabled</a>
                         <a>Enabled</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             {% endfor %}

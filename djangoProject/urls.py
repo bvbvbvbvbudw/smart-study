@@ -20,10 +20,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from frontSmart.views import tasks, getTask, addTask
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authApp.urls')),
     path('', include('frontSmart.urls')),
+    path('tasks/', tasks),
+    path('tasks/<int:taskId>', getTask),
+    path('addTask/', addTask),
 ]
 
 if settings.DEBUG:

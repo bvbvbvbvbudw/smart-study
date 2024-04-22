@@ -1,0 +1,13 @@
+{% extends 'layouts/front/main.html' %}
+
+{% block content %}
+
+<div class="task-add">
+    <form action="/tasks/{{task.id}}" method="post" class="task-add-items">
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Add" class="task-add-button"/>
+    </form>
+</div>
+{% endblock %}

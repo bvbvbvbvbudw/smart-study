@@ -39,20 +39,13 @@ body, html{
 .inp-form label .input input{
     block-size: 100%;
     inline-size: 89%;
-<<<<<<< HEAD
-    background: rgb(230,224,233)!important;
-=======
-    /*background: rgb(230,224,233)!important;*/
->>>>>>> 09c94878ff8f9f97a241ef29a5cbfd6a72af3c3c
+    /* background: rgb(230,224,233)!important; */
     border: none;
     padding-block-end: 10px;
     outline: none;
     padding: 10px;
-<<<<<<< HEAD
     border: 1px rgb(187, 187, 187) solid;
     border-radius: 6px;
-=======
->>>>>>> 09c94878ff8f9f97a241ef29a5cbfd6a72af3c3c
 }
 .inp-form label .input input:focus{
     border: none;
@@ -71,13 +64,12 @@ body, html{
     gap: 15px;
 }
 .wrapper-register{
-
     border-radius: 70px;
     border: 5px solid #6750A4;
     background-color: #fff;
     width: 30%;
     min-width: 500px;
-    height: 40%;
+    /* height: 40%; */
     min-height: 300px;
     margin: 0 auto;
     vertical-align: center;
