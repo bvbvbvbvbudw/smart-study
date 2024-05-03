@@ -1,0 +1,12 @@
+<aside id="aside">
+    <a  onclick="toggleAside()">Return</a>
+    <a href="{% url 'index' %}">Main</a>
+    <a href="{% url 'addTask' %}">Add Task</a>
+    
+    <div class="logout-container">
+        <form action="{% url 'logout' %}" method="post" class="logout-button">
+            {%csrf_token%}
+            <button>Logout</button>
+        </form>
+    </div>
+</aside>

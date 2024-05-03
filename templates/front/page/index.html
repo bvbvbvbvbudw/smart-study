@@ -1,0 +1,48 @@
+{% extends 'layouts/front/main.html' %}
+{% block title %} Main Page {% endblock %}
+
+{% block content %}
+    <div class="main-section">
+        <div class="main-container">
+
+            {% if taskList %}  
+            {% for task in taskList %}
+            <div class="main-container-item">
+                <div class="main-container-item-header">
+                    <div class="main-container-item-header-left">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"/>
+                    </div>
+                    <div class="main-container-item-header-center">
+                        <h2>
+                            <a href="{% url 'getTask' task.id %}">{{ task.subject }}</a>
+                        </h2>
+                        {% if task.isCompleted == True %}
+                        <a><b>Completed</b></a>
+                        {% else %}
+                        <a>Complete by: {{task.date}}</a>
+                        {% endif %}
+                    </div>
+                    <div class="main-container-item-header-right">
+                        <img src="https://cdn3.iconfinder.com/data/icons/slicons-line-essentials/24/more_vertical-512.png"/>
+                    </div>
+                </div>
+                <div class="main-container-item-main">
+                    <div class="main-container-item-main-image">
+                        <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"/>
+                    </div>
+                    
+                    <div class="main-container-item-main-title">
+                        <h3>{{task.task}}</h3>
+                        <a>{{task.topic}}</a>
+                    </div>
+                    
+                    <div class="main-container-item-main-description">
+                        <a>{{task.description}}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif  %}
+        </div>
+    </div>
+{% endblock %}
