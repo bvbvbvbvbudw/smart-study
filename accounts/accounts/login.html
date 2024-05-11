@@ -9,6 +9,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
+        <a href="{% url 'register' %}">New to Smart Study? Create an account!</a>
         <button type="submit">Login</button>
     </form>
 </body>

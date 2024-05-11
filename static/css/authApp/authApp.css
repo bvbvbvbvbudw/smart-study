@@ -54,6 +54,9 @@ body, html{
 .inp-form label .input a{
 
 }
+.inp-form p{
+    margin: 0;
+}
 
 /* Login styles */
 .form-register{

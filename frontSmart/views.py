@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
-from frontSmart.forms import AddTaskForm
+from frontSmart.forms import *
 from django.http import HttpResponseRedirect, JsonResponse
 
-# Create your views here.
+
 def index(request):
     tasks = Task.objects.all()
     return render(request, 'front/page/index.html', {'taskList': tasks})
@@ -14,19 +14,49 @@ def tasks(request):
 
 def getTask(request, taskId):
     task = get_object_or_404(Task, pk=taskId)
-    return render(request, 'front/page/task.html', {'task': task})
+    return render(request, 'front/page/task.html', {'task': task, 'id': taskId})
 
 def addTask(request):
     if request.method == 'POST':
-        form = AddTaskForm(request.POST)
+        form = TaskForm(request.POST)
         if form.is_valid():
             task = form.save()
             return redirect('index')
     else:
-        form = AddTaskForm()
+        form = TaskForm()
     return render(request, 'front/page/taskAdd.html', {'form': form})
+
+def updateTask(request, taskId):
+    task = get_object_or_404(Task, pk=taskId)   
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST, request.FILES, instance=task)
+        form.save()
+        return redirect('index')
+    
+    return render(request, 'front/page/taskUpdate.html', {'form': TaskForm(None, instance=task), 'id': taskId})
 
 def getTaskByDate(request, date):
     tasks = Task.objects.filter(date=date)
     tasks_data = [{'id': task.pk, 'task': task.task, 'subject': task.subject} for task in tasks]
     return JsonResponse({'tasks': tasks_data})
+
+def submitTask(request,taskId):
+    # if request.method == 'POST':
+    #     form = SubmitForm(request.POST)
+    #     if form.is_valid():
+    #         task = form.save()
+    #         return redirect('index')
+    # else:
+    #     form = SubmitForm()
+    # return render(request, 'front/page/task.html', {'form': form})
+
+    task = get_object_or_404(Task, pk=taskId)   
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST, request.FILES, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    
+    return render(request, 'front/page/task.html', {'form': SubmitForm(None, instance=task), 'id': taskId})

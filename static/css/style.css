@@ -338,6 +338,10 @@ aside a:hover {
     height: 80%;
     margin-top: 2%;
 }
+.main-container-item-header-right img{
+  width: 100%;
+  height: 100%;
+}
 
 
 .main-container-item-main{
@@ -400,25 +404,25 @@ aside a:hover {
 
 /* main board style*/
 
-/* task add page*/
-.task-add{
+/* task add and update page*/
+.task-options{
   text-align: center;
   display: flex;
-  margin: 100px;
+  margin: 100px auto;
   justify-content: center;
   width: 80%;
 }
-.task-add form{
+.task-options form{
   border: 3px solid #6750A4;
   border-radius: 30px;
   padding: 30px 40px;
   background-color: white;
 }
-.task-add div{
+.task-options div{
   margin: 10px;
   text-align: left;
 }
-.task-add form div input{
+.task-options form div input{
   width: 100%;
   height: 30px;
   margin-top: 5px;
@@ -426,10 +430,10 @@ aside a:hover {
   border: 1px gray solid;
   background-color: rgb(236, 236, 236);
 }
-.task-add form div label{
+.task-options form div label{
   font-size: 20px;
 }
-.task-add-button{
+.task-options-button{
   width: 90px;
   height: 30px;
   margin-top: 25px;
@@ -442,8 +446,70 @@ aside a:hover {
 
 /* task page */
 
-.topic{
+.current-task-container{
   width: 80%;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 20px;
+}
+.current-task-subject{
+  width: 90%;
+  height: 50px;
+  display: flex;
+  background-color: rgb(228, 214, 233);
+  border-radius: 15px;
+  padding: 5px 10px;
+  align-items: center;
+  margin: 15px auto;
+  
+}
+.current-task-information{
+  width: 100%;
+}
+.current-task-information h1{
+  text-align: center;
+  font-size: 50px;
+}
+.current-task-information p{
+  padding: 0 10px;
 }
 
+.current-task-submit{
+  background-color: rgb(249, 233, 255);
+  border: 1px gray solid;
+  border-radius: 15px;
+  width: 500px;
+  margin: 150px auto;
+}
+.current-task-submit div{
+  display: flex;
+  margin: 15px 50px;
+  gap: 20px;
+}
+.current-task-submit-button{
+  margin: 10px auto;
+  display: flex;
+  width: 90%;
+  border-radius: 15px;
+  border: 0;
+  background-color: #6750A4;
+  color: white;
+  text-align: center;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.current-task-submit div:first-child{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.current-task-submit div:last-child{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.current-task-submit div ul{
+  display: none;
+}
 /* end task page */

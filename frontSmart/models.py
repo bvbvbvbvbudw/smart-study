@@ -9,3 +9,4 @@ class Task(models.Model):
     topic = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     isCompleted = models.BooleanField(default=False)
+    completedTask = models.FileField(blank=True, null=True)
