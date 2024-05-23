@@ -1,8 +1,16 @@
 <aside id="aside">
-    <a  onclick="toggleAside()">Return</a>
+    <a onclick="toggleAside()">Return</a>
     <a href="{% url 'index' %}">Main</a>
-    <a href="{% url 'addTask' %}">Add Task</a>
-    
+    {% if request.user.is_authenticated and request.user.userrole %}
+        {% if request.user.userrole.role == 'admin' %}
+            <a href="{% url 'addTask' %}">Add Task</a>
+    {% else %}
+        {{ request.user.userrole.role }}
+    {% endif %}
+    {% else %}
+        No role assigned
+    {% endif %}
+
     <div class="logout-container">
         <form action="{% url 'logout' %}" method="post" class="logout-button">
             {%csrf_token%}

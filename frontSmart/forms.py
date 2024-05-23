@@ -13,6 +13,15 @@ class TaskForm(forms.ModelForm):
         model = Task
         exclude = ['file','isCompleted','completedTask']
 
+
+
+class TaskUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['isCompleted', 'completedTask']
+
+
+
 class SubmitForm(forms.ModelForm):
     completedTask = forms.FileField()
     isCompleted = True

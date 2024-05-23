@@ -41,22 +41,16 @@ def getTaskByDate(request, date):
     tasks_data = [{'id': task.pk, 'task': task.task, 'subject': task.subject} for task in tasks]
     return JsonResponse({'tasks': tasks_data})
 
-def submitTask(request,taskId):
-    # if request.method == 'POST':
-    #     form = SubmitForm(request.POST)
-    #     if form.is_valid():
-    #         task = form.save()
-    #         return redirect('index')
-    # else:
-    #     form = SubmitForm()
-    # return render(request, 'front/page/task.html', {'form': form})
-
-    task = get_object_or_404(Task, pk=taskId)   
+def submitTask(request, taskId):
+    task = get_object_or_404(Task, pk=taskId)
 
     if request.method == 'POST':
-        form = TaskForm(request.POST, request.FILES, instance=task)
+        form = SubmitForm(request.POST, request.FILES, instance=task)
         if form.is_valid():
-            form.save()
+            task = form.save(commit=False)
+            task.isCompleted = True
+            task.save()
             return redirect('index')
-    
-    return render(request, 'front/page/task.html', {'form': SubmitForm(None, instance=task), 'id': taskId})
+    else:
+        form = SubmitForm(instance=task)
+    return render(request, 'front/page/task.html', {'form': form, 'task': task})

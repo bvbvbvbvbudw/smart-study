@@ -4,8 +4,7 @@
 {% block content %}
     <div class="main-section">
         <div class="main-container">
-
-            {% if taskList %}  
+            {% if taskList %}
             {% for task in taskList %}
             <div class="main-container-item">
                 <div class="main-container-item-header">
@@ -22,11 +21,13 @@
                         <a>Complete by: {{task.date}}</a>
                         {% endif %}
                     </div>
+                        {% if request.user.userrole.role == 'admin' and request.user.userrole.role == 'moderator' %}
                     <div class="main-container-item-header-right">
                         <a href="/updateTask/{{task.id}}">
                             <img src="https://cdn3.iconfinder.com/data/icons/slicons-line-essentials/24/more_vertical-512.png"/>
                         </a>
                     </div>
+                    {% endif %}
                 </div>
                 <div class="main-container-item-main">
                     <div class="main-container-item-main-image">

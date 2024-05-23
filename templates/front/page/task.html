@@ -3,19 +3,19 @@
 
 {% block content %}
 <div class="current-task-container">
-  <div class="current-task-subject">{{task.subject}}</div>
+  <div class="current-task-subject">{{ task.subject }}</div>
   <div class="current-task-information">
     <div>
-      <h1>{{task.topic}}</h1>
+      <h1>{{ task.topic }}</h1>
     </div>
     <div>
-      <p>{{task.description}}</p>
+      <p>{{ task.description }}</p>
     </div>
   </div>
 
-  <form class="current-task-submit" action="{% url 'submitTask' id %}" method="post">
+  <form class="current-task-submit" action="{% url 'submitTask' task.id %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
 
     <input type="submit" value="Submit" class="current-task-submit-button"/>
   </form>
